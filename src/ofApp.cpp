@@ -9,19 +9,19 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
 	
-	if (TCP.isClientConnected(0)) {
-		string str = "a";
-		str = TCP.receive(0);
+	
+	if (TCP.isClientConnected(0)) {		
+		string str = TCP.receive(0);
 		ofxJSONElement element = new ofxJSONElement;
-		if (element.parse(str)) {
+		if (str != "" && element.parse(str)) {
 			if (element["COMMAND"].asString() == "start") {
 				cout << "received start" << endl;
-				TCP.send(0,"{ \"STATUS\": \"OK\"");
+				TCP.send(0,"{ \"STATUS\": \"OK\"}");
 			}
 
 			if (element["COMMAND"].asString() == "stop") {
 				cout << "received stop" << endl;
-				TCP.send(0, "{ \"STATUS\": \"OK\"");
+				TCP.send(0, "{ \"STATUS\": \"OK\"}");
 			}
 		}
 	}
