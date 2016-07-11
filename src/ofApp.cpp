@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+	TCP.setMessageDelimiter("\n");
 	TCP.setup(5555);
 }
 
@@ -9,7 +10,8 @@ void ofApp::setup(){
 void ofApp::update(){
 	
 	if (TCP.isClientConnected(0)) {
-		string str = TCP.receive(0);
+		string str = "a";
+		str = TCP.receive(0);
 		ofxJSONElement element = new ofxJSONElement;
 		if (element.parse(str)) {
 			if (element["COMMAND"].asString() == "start") {
