@@ -1,22 +1,6 @@
-﻿  jsoncpp.cpp
-  ofxJSONElement.cpp
-  ofxTCPClient.cpp
-  ofxTCPManager.cpp
-  ofxTCPServer.cpp
-  ofxUDPManager.cpp
-  main.cpp
-  ofApp.cpp
+﻿  ofApp.cpp
      Creating library bin\MotorShowTestServer.lib and object bin\MotorShowTestServer.exp
   LINK : /LTCG specified but no code generation required; remove /LTCG from the link command line to improve linker performance
   MotorShowTestServer.vcxproj -> C:\of_v0.9.3_vs_release\apps\MotorShowTestServer\MotorShowTestServer\bin\MotorShowTestServer.exe
   
   	                   9	C:\of_v0.9.3_vs_release\export\vs\Win32\
-  	    New File  		 2939392	C:\of_v0.9.3_vs_release\export\vs\Win32\assimp.dll
-  	    New File  		 1266176	C:\of_v0.9.3_vs_release\export\vs\Win32\fmodex.dll
-  	    New File  		 1312768	C:\of_v0.9.3_vs_release\export\vs\Win32\fmodexL.dll
-  	    New File  		 5647872	C:\of_v0.9.3_vs_release\export\vs\Win32\FreeImage.dll
-  	    New File  		  580608	C:\of_v0.9.3_vs_release\export\vs\Win32\freetype.dll
-  	    New File  		  237568	C:\of_v0.9.3_vs_release\export\vs\Win32\glut32.dll
-  	    New File  		 1178624	C:\of_v0.9.3_vs_release\export\vs\Win32\libeay32.dll
-  	    New File  		  269824	C:\of_v0.9.3_vs_release\export\vs\Win32\ssleay32.dll
-  	    New File  		   69632	C:\of_v0.9.3_vs_release\export\vs\Win32\Zlib.dll
