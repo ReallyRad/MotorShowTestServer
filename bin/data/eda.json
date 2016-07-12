@@ -1,0 +1,14 @@
+{
+	"DATA": [
+				{
+					"ID": "eda_phasic",
+					"Values": [],
+					"Timestamp": "515666525"
+				},
+				{
+					"ID": "eeg_tonic",
+					"Values": [],
+					"Timestamp": "515666525"
+				}
+			]
+}
