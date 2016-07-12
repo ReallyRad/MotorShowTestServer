@@ -1,0 +1,19 @@
+{
+	"DATA": [
+				{
+					"ID": "eeg_alpha",
+					"Values": [4.5, 4.3, 45],
+					"Timestamp": "515666525"
+				},
+				{
+					"ID": "eeg_beta",
+					"Values": [4.5, 4.3, 45],
+					"Timestamp": "515666525"
+				},
+				{
+					"ID": "eeg_theta",
+					"Values": [4.5, 4.3, 45],
+					"Timestamp": "515666525"
+				}
+			]
+}
