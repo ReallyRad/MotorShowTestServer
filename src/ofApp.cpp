@@ -56,7 +56,7 @@ void ofApp::update(){
 					//save to file to view results
 					e.save("test.json", true);
 					//send to client
-					TCP.send(0,e.getRawString());
+					//TCP.send(0,e.getRawString());
 				}
 				
 			}
@@ -65,11 +65,44 @@ void ofApp::update(){
 			if (ofGetElapsedTimeMillis() - timer_eeg > 31) {
 				timer_eeg = ofGetElapsedTimeMillis();
 
+				//use the template eeg json file
+				ofxJSONElement e = new ofxJSONElement();
+				std::string file = "eeg.json";
+				bool parsingSuccessful = e.open(file);
+
+				if (parsingSuccessful) {
+					for (int i = 0; i < 3; i++) {
+						//for each eeg signal, set 4*8 random values and the timestamp
+						for (int j = 0; j < 32; j++) e["DATA"][i]["Values"][j] = ofRandom(1);
+						e["DATA"][i]["Timestamp"] = ofGetElapsedTimeMillis();
+					}
+				}
+
+					//save to file to view results
+					e.save("test.json", true);
+					//send to client
+					//TCP.send(0,e.getRawString());
 			}
 
 			//every 1000 ms, ecg_hr, 1 sample
 			if (ofGetElapsedTimeMillis() - timer_ecg > 1000) {
 				timer_ecg = ofGetElapsedTimeMillis();
+
+				//use the template eeg json file
+				ofxJSONElement e = new ofxJSONElement();
+				std::string file = "ecg.json";
+				bool parsingSuccessful = e.open(file);
+
+				if (parsingSuccessful) {
+					//for the ecg signal, set 1 random value and the timestamp
+					e["DATA"][0]["Values"][0] = ofRandom(1);
+					e["DATA"][0]["Timestamp"] = ofGetElapsedTimeMillis();
+				}
+
+					//save to file to view results
+					e.save("test.json", true);
+					//send to client
+					//TCP.send(0,e.getRawString());
 			}
 
 
