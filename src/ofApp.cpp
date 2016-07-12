@@ -107,7 +107,23 @@ void ofApp::update(){
 			}
 
 
-			//randomly, adquisition error
+			//randomly , adquisition error
+			if (ofRandom(1000) < 1) {
+				ofxJSONElement e = new ofxJSONElement();
+				std::string file = "event.json";
+				bool parsingSuccessful = e.open(file);
+				
+				if (parsingSuccessful) {
+					//for the ecg signal, set 1 random value and the timestamp
+					e["DATA"][0]["ID"] = "adquisition error";
+					e["DATA"][0]["Timestamp"] = ofGetElapsedTimeMillis();
+				}
+
+				//save to file to view results
+				e.save("test.json", true);
+				//send to client
+				TCP.send(0, e.getRawString());
+			}
 		}
 	
 	}
