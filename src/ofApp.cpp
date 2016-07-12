@@ -2,7 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-	TCP.setMessageDelimiter("\n");
+//	TCP.setMessageDelimiter("\TCP");
 	TCP.setup(5555);
 	started = false;
 }
@@ -54,9 +54,10 @@ void ofApp::update(){
 					}
 					
 					//save to file to view results
-					e.save("test.json", true);
+					//e.save("test.json", true);
 					//send to client
-					//TCP.send(0,e.getRawString());
+					string t = e.getRawString();
+					TCP.send(0,e.getRawString());
 				}
 				
 			}
@@ -79,9 +80,9 @@ void ofApp::update(){
 				}
 
 					//save to file to view results
-					e.save("test.json", true);
+					//e.save("test.json", true);
 					//send to client
-					//TCP.send(0,e.getRawString());
+					TCP.send(0,e.getRawString());
 			}
 
 			//every 1000 ms, ecg_hr, 1 sample
@@ -100,9 +101,9 @@ void ofApp::update(){
 				}
 
 					//save to file to view results
-					e.save("test.json", true);
+					//e.save("test.json", true);
 					//send to client
-					//TCP.send(0,e.getRawString());
+					TCP.send(0,e.getRawString());
 			}
 
 
